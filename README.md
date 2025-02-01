@@ -1,3 +1,3 @@
 # Breathing Exercises
 
-HTML &amp; CSS deep breathing exercises for stress and anxiety.
+HTML &amp; CSS deep breathing exercises to tackle stress and anxiety.
