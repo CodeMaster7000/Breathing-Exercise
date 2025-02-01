@@ -1,0 +1,150 @@
+$interval: 4;
+.anxiety-box {
+  position: relative;
+  box-sizing: border-box;
+  width: 250px;
+  height: 250px;
+  background: lightblue;
+  margin: 250px auto;
+  padding: 25px;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  p {
+    width: 125%;
+    position: absolute;
+    top: -85%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 38px;
+    font-size: 32px;
+  }
+  svg {
+    width: 100%;
+    fill: white;
+    transform: scale(0.8);
+    animation: lungAnimation #{$interval * 4}s infinite;
+  }
+}
+.anxiety-box {
+  &__top, &__right, &__bottom, &__left {
+    position: absolute;
+    font-weight: 700;
+  }
+  &__top {
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__right {
+    top: 50%;
+    right: -54px;
+    transform: translateY(-50%) rotate(90deg);
+  }
+  &__bottom {
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__left {
+    top: 50%;
+    left: -54px;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  &__dot {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: #7a8eff;
+    border-radius: 50%;
+    animation: dotAnimation #{$interval * 4}s infinite;
+    animation-timing-function: cubic-bezier(.57,.31,.8,.62);
+  }
+}
+@keyframes lungAnimation {
+  0% {
+    transform: scale(0.8);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes dotAnimation {
+  0% {
+    top: -10px;
+    left: -10px;
+  }
+  25% {
+    top: -10px;
+    left: 240px;
+  }
+  50% {
+    top: 240px;
+    left: 240px;
+  }
+  75% {
+    top: 240px;
+    left: -10px;
+  }
+  100% {
+    top: -10px;
+    left: -10px;
+  }
+}
+body {
+  background: #f2f2f2;
+  color: #2d2d2d;
+  &:after {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.3295693277310925) 0%, rgba(29,49,118,0) 100%);
+    pointer-events: none;
+  }
+}
+.description {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 100px auto;
+  * {
+    font-size: 26px;
+    line-height: 38px;
+  }
+  p {
+    font-family: 'Caveat', cursive; 
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  } 
+  ul {
+    list-style: bullet;
+    padding-left: 30px;
+    
+    li {
+    font-family: 'Caveat', cursive;
+    }
+  }
+  &:before {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgrey;
+  }
+}
